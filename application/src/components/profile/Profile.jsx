@@ -1,7 +1,25 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import style from './Profile.module.css'
+import axios from "axios";
 
 const Profile = () => {
+    const [items, setItems] = useState([]);
+    const [isLogin, setIsLogin] = useState(true)
+
+    const fetchUsers = async () => {
+        try {
+            const res = await axios.get(
+                `https://new-backend.unistory.app/api/data`
+            );
+            setItems(res.data.items)
+        } catch (e) {
+            console.log(e, "AXIOS ERROR")
+        }
+    };
+
+    useEffect(() => {
+        fetchUsers()
+    },)
     return (
         <div className={style.wrapper}>
             <div className={style.content}>
@@ -26,6 +44,7 @@ const Profile = () => {
                 <div className={style.buttonSingUp}>List me to table</div>
             </div>
             <div className={style.usersTable}>
+                <h3>Participation listing (enable only for participants)</h3>
                 <table>
                     <thead>
                     <tr>
@@ -38,298 +57,22 @@ const Profile = () => {
                 <div className={style.usersTableBody}>
                     <table>
                         <tbody>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr><tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr><tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr><tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr><tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr><tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr><tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr><tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr><tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr><tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-                        <tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr><tr>
-                            <td>Hamish Gilmore</td>
-                            <td>walob95230@nubotel.com</td>
-                            <td>0x279D9f0c10fBB3D44fEf96...</td>
-                        </tr>
-
-
+                        {
+                           isLogin && <tr>
+                                <td style={{color: "#E75626"}}>Rojer waters</td>
+                                <td style={{color: "#E75626"}}>Charadeyouare@gmail.com</td>
+                                <td style={{color: "#E75626"}}>0x279D9f0c10fBB3D44fEf96...</td>
+                            </tr>
+                        }
+                        {
+                            items.map((obj, index) => (
+                                <tr key={index}>
+                                    <td>{obj.username}</td>
+                                    <td>{obj.email}</td>
+                                    <td>{obj.address}</td>
+                                </tr>
+                            ))
+                        }
 
                         </tbody>
                     </table>

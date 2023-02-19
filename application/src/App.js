@@ -1,6 +1,9 @@
 import './App.css';
 import Header from "./components/header/Header";
-import Home from "./pages/home/Home";
+import Home from "./components/home/Home";
+import Registration from "./components/registration/Registration";
+import Profile from "./components/profile/Profile";
+import {Route, Routes} from "react-router-dom";
 
 function App() {
     return (
@@ -8,6 +11,10 @@ function App() {
             <Header/>
             <Home/>
             <div className="content">
+                <Routes>
+                    <Route path="/" element={<Registration/>}/>
+                    <Route path="/profile" element={<Profile/>}/>
+                </Routes>
 
             </div>
         </div>

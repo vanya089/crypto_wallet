@@ -1,5 +1,10 @@
 .wrapper{
     margin: 0 auto;
     max-width: 1440px;
+    height: 1500px;
     background-color: #171719;;
+}
+
+.content{
+    max-height: 700px;
 }

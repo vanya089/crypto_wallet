@@ -1,0 +1,126 @@
+.wrapper {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.content {
+    width: 460px;
+    margin-top: 100px;
+    margin-left: 64px;
+}
+
+h4 {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 43px;
+    color: #E75626;
+}
+
+.info {
+
+    color: white;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.profileForm {
+
+    display: flex;
+    flex-direction: column;
+}
+
+h5 {
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-family: 'Bebas Neue', cursive;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    color: #E75626;
+}
+
+.buttonSingUp {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 18px;
+    line-height: 120%;
+    background: #E75626;
+    border-radius: 30px;
+    color: white;
+    margin-top: 32px;
+    padding: 10px 24px 7px 24px;
+    width: 150px;
+}
+
+.usersTable{
+    margin-top: 100px;
+    margin-right: 64px;
+}
+
+.usersTableBody {
+    height: 590px;
+    overflow-x: auto;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.usersTable table {
+    width: 670px;
+    table-layout: fixed;
+    border: none;
+}
+
+
+.usersTable thead th {
+    font-family: 'Bebas Neue', cursive;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: left;
+    border: none;
+    padding: 10px 15px;
+    background: #171719;
+    border-bottom: 1px solid #ddd;
+    /*border-right: 1px solid #ddd;*/
+    color: #FFFFFF;
+}
+
+.usersTable tbody td {
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    /*border-right: 1px solid #ddd;*/
+    padding: 10px 15px;
+    font-size: 14px;
+    vertical-align: top;
+    color: white;
+}
+
+.usersTable tbody tr:nth-child(even) {
+    background: #171719;
+}
+
+/* Стили для скролла */
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 100px rgb(255, 255, 255);
+}
+
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 100px rgba(213, 73, 13, 0.93);
+}

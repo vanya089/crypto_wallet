@@ -1,0 +1,52 @@
+.modal {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #262628;
+    height: 290px;
+    width: 420px;
+}
+
+.header {
+    margin: 10px 0;
+    font-family: 'Bebas Neue', cursive;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 120%;
+    color: #E75626;
+}
+
+.info{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: white;
+    text-align: center;
+}
+.activeButton{
+    cursor: pointer;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 18px;
+    line-height: 120%;
+    background: #E75626;
+    border-radius: 30px;
+    color: white;
+    padding: 10px 24px 7px 24px;
+}

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from './Home.module.css'
+import ModalMeta from "../modal-meta/ModalMeta";
 
 
 const Home = () => {
+
     return (
         <div className={style.wrapper}>
 
@@ -33,6 +35,7 @@ const Home = () => {
                     nemo non pariatur quod sapiente voluptates voluptatum.
                 </div>
             </div>
+
 
         </div>
     );

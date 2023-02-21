@@ -42,8 +42,8 @@ const Registration = () => {
                            placeholder="We will display your name in participation list"/>
                 </form>
 
-                <Link to={"/profile"}>
-                    <div className={style.buttonSingUp}>Get early access</div>
+                <Link style={{textDecoration:"none"}} to={"/profile"}>
+                    <div  className={style.buttonSingUp}>Get early access</div>
                 </Link>
 
             </div>

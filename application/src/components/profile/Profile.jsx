@@ -25,7 +25,7 @@ const Profile = () => {
     useEffect(() => {
         fetchUsers()
 
-    },[])
+    }, [])
     return (
         <div className={style.wrapper}>
             <div className={style.content}>
@@ -68,10 +68,16 @@ const Profile = () => {
                                 <td style={{color: "#E75626"}}>{name}</td>
                                 <td style={{color: "#E75626"}}>{email}</td>
                                 <td style={{color: "#E75626", position: "relative"}}>
-                                   <div>{address}</div>
+                                    <div style={{
+                                        whiteSpace: "nowrap",
+                                        overflow: "hidden",
+                                        textOverflow: "ellipsis"
+                                    }}>
+                                        {address}
+                                    </div>
 
-                                         <img onClick={()=> setIsLogin(false)} className={style.closeIcon} src={close} alt="closeIcon"/>
-
+                                    <img onClick={() => setIsLogin(false)} className={style.closeIcon} src={close}
+                                         alt="closeIcon"/>
 
 
                                 </td>

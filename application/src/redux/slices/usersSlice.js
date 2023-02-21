@@ -4,7 +4,7 @@ import {createSlice} from "@reduxjs/toolkit";
 const initialState = {
     name: null,
     email: null,
-    address: 1212,
+    address: null,
 };
 
 

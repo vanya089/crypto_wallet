@@ -1,20 +1,48 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import style from './Home.module.css'
-import ModalMeta from "../modal-meta/ModalMeta";
+import planet from '../../assets/palnet.png'
 
 
 const Home = () => {
+    // animation code
+    const [percent, setPercent] = useState(1)
+
+
+    const radius = 242;
+    const circumference = 2 * Math.PI * radius;
+
+    const offset = circumference - percent / 100 * circumference;
+
 
     return (
         <div className={style.wrapper}>
 
             <div className={style.content}>
                 <div className={style.item}>
+                    <div className={style.anime}>
+                        <img onClick={() => setPercent(percent + 5)} className={style.planet} src={planet} alt="mars"/>
+                        <svg className={style.progressRing} width="500" height="500">
+                            <circle
+                                className={style.progressRingCircle}
+                                stroke="#E75626"
+                                strokeWidth="2"
+                                cx="250"
+                                cy="250"
+                                r="242"
+                                style={{
+                                    strokeDashoffset: offset,
+                                    strokeDasharray: circumference,
+                                }}
+                            />
+                        </svg>
+                    </div>
+
                     <h1>
                         Explore Your own planet
                         <br/>
                         In our New metaverse
                     </h1>
+                    });
                 </div>
                 <div className={style.roadMap}>
                     <h3>Roadmap stats</h3>

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import style from './Home.module.css'
-import planet from '../../assets/palnet.png'
+import planet from '../../assets/planet.png'
 
 
 const Home = () => {

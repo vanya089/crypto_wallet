@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import style from './Home.module.css'
 import planet from '../../assets/palnet.png'
 

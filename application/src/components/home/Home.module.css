@@ -91,29 +91,4 @@ ul {
     line-height: 19px;
 }
 
-.planet{
-    position: absolute;
-    z-index: 2;
-    top: 44px;
-    left: 655px;
-    width: 350px;
-    height: 350px;
-}
 
-/*animation*/
-
-.anime {
-    position: relative;
-}
-
-.progressRing {
-    position: absolute;
-    top: -33px;
-    left: 584px;
-}
-
-.progressRingCircle {
-    fill: none;
-    transform-origin: center;
-    transform: rotate(-90deg);
-}

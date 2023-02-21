@@ -13,6 +13,7 @@
 }
 
 .activeButton{
+  cursor: pointer;
   font-family: 'Bebas Neue', cursive;
   font-size: 18px;
   line-height: 120%;

@@ -26,7 +26,7 @@ const Header = () => {
 
     return (<div className={style.header}>
             <div className={style.wrapper}>
-                <Link to={"/"}>
+                <Link  to={"/"}>
                     <div className={style.logo}>
                         <img src={planet} alt="logo"/>
                     </div>

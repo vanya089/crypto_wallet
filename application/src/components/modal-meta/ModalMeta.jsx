@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './ModalMeta.module.css'
 
-const ModalMeta = ({active, setActive}) => {
+const ModalMeta = ({setActive}) => {
     return (
         <div className={style.modal}>
             <div className={style.content}>
@@ -11,7 +11,7 @@ const ModalMeta = ({active, setActive}) => {
                     you have to install the
                     <a
                         style={{color: "#E75626", textDecoration: "none"}}
-                        href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn"
+                        href="https://metamask.io/download/"
                     >
                         <br/>Metamask browser extension
                     </a>

@@ -6,6 +6,7 @@ import Profile from "./components/profile/Profile";
 import {Route, Routes} from "react-router-dom";
 
 function App() {
+    //lala
     return (
         <div className="wrapper">
             <Header/>

@@ -24,6 +24,8 @@ const usersSlice = createSlice({
     },
 });
 
+export const addressSelector = (state) => state.users.address;
+
 export const {setUserName, setUserEmail, setUserAddress} = usersSlice.actions;
 
 export default usersSlice.reducer

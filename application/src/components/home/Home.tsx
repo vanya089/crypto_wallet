@@ -3,7 +3,7 @@ import style from './Home.module.css'
 
 
 
-const Home = () => {
+const Home: React.FC = () => {
 
     return (
         <div className={style.wrapper}>
@@ -15,7 +15,6 @@ const Home = () => {
                         <br/>
                         In our New metaverse
                     </h1>
-                    });
                 </div>
                 <div className={style.roadMap}>
                     <h3>Roadmap stats</h3>

@@ -1,10 +1,17 @@
 import {createSlice} from "@reduxjs/toolkit";
+import {RootState} from "../store";
+
+export type UserType = {
+    name: string;
+    email: string;
+    address: string;
+}
 
 
-const initialState = {
-    name: null,
-    email: null,
-    address: null,
+const initialState: UserType = {
+    name: '',
+    email: '',
+    address: '',
 };
 
 
@@ -24,7 +31,9 @@ const usersSlice = createSlice({
     },
 });
 
-export const addressSelector = (state) => state.users.address;
+export const nameSelector = (state: RootState) => state.users.name;
+export const emailSelector = (state: RootState) => state.users.email;
+export const addressSelector = (state: RootState) => state.users.address;
 
 export const {setUserName, setUserEmail, setUserAddress} = usersSlice.actions;
 

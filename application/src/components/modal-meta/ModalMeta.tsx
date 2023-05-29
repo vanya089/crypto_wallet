@@ -1,7 +1,11 @@
 import React from 'react';
 import style from './ModalMeta.module.css'
 
-const ModalMeta = ({setActive}) => {
+type PropsType = {
+    setActive: (modalActive: boolean)=>void;
+}
+
+const ModalMeta: React.FC<PropsType> = ({setActive}) => {
     return (
         <div className={style.modal}>
             <div className={style.content}>

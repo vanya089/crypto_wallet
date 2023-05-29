@@ -3,12 +3,19 @@ import style from './Profile.module.css'
 import axios from "axios";
 import close from '../../assets/red_close.svg'
 import {useSelector} from "react-redux";
+import {addressSelector, emailSelector, nameSelector} from "../../redux/slices/usersSlice";
+
 
 const Profile = () => {
-    const name = useSelector(state => state.users.name);
-    const email = useSelector(state => state.users.email);
-    const address = useSelector(state => state.users.address);
-    const [items, setItems] = useState([]);
+    const name = useSelector(nameSelector);
+    const email = useSelector(emailSelector);
+    const address = useSelector(addressSelector);
+    const [items, setItems] = useState<[{
+        username: string;
+        email: string;
+        address: string;
+    }]>
+    ();
     const [isLogin, setIsLogin] = useState(true);
 
     const fetchUsers = async () => {
@@ -65,32 +72,32 @@ const Profile = () => {
                         <tbody>
                         {
                             isLogin && <tr>
-                                <td style={{color: "#E75626"}}>{name}</td>
-                                <td style={{color: "#E75626"}}>{email}</td>
-                                <td style={{color: "#E75626", position: "relative"}}>
-                                    <div style={{
-                                        whiteSpace: "nowrap",
-                                        overflow: "hidden",
-                                        textOverflow: "ellipsis"
-                                    }}>
-                                        {address}
-                                    </div>
+														<td style={{color: "#E75626"}}>{name}</td>
+														<td style={{color: "#E75626"}}>{email}</td>
+														<td style={{color: "#E75626", position: "relative"}}>
+															<div style={{
+                                  whiteSpace: "nowrap",
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis"
+                              }}>
+                                  {address}
+															</div>
 
-                                    <img onClick={() => setIsLogin(false)} className={style.closeIcon} src={close}
-                                         alt="closeIcon"/>
+															<img onClick={() => setIsLogin(false)} className={style.closeIcon} src={close}
+															     alt="closeIcon"/>
 
 
-                                </td>
-                            </tr>
+														</td>
+													</tr>
                         }
                         {
-                            items.map((obj, index) => (
+                            items ? items.map((obj, index) => (
                                 <tr key={index}>
                                     <td>{obj.username}</td>
                                     <td>{obj.email}</td>
                                     <td>{obj.address}</td>
                                 </tr>
-                            ))
+                            )) : <></>
                         }
 
                         </tbody>
